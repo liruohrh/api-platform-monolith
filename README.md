@@ -3,8 +3,9 @@
 ## 介绍
 
 - 2025届本科生毕业设计项目
-- 单体版https://github.com/liruohrh/api-open-platform
-- 区别：功能更加完善一些，但是有些UI因为要求写得相对死一些
+- 从微服务版  https://github.com/liruohrh/api-open-platform  重写为单体版
+  - 区别：功能更加完善一些，但是有些UI因为要求写得相对死一些
+
 
 
 
