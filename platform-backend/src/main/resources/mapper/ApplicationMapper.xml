@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.github.liruohrh.apiplatform.mapper.ApplicationMapper">
+
+    <resultMap id="BaseResultMap" type="io.github.liruohrh.apiplatform.model.entity.Application">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="applicationType" column="application_type" jdbcType="TINYINT"/>
+            <result property="title" column="title" jdbcType="VARCHAR"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="replyContent" column="reply_content" jdbcType="VARCHAR"/>
+            <result property="auditStatus" column="audit_status" jdbcType="TINYINT"/>
+            <result property="extraData" column="extra_data" jdbcType="VARCHAR"/>
+            <result property="ctime" column="ctime" jdbcType="BIGINT"/>
+            <result property="utime" column="utime" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,application_type,title,
+        content,reply_content,audit_status,
+        ctime,utime
+    </sql>
+</mapper>

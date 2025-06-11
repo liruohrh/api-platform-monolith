@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.github.liruohrh.apiplatform.mapper.OrderMapper">
+
+  <select id="pageOrder" resultType="io.github.liruohrh.apiplatform.model.vo.OrderVo">
+    select
+      http_api.name as api_name,
+      goods_order.id,
+      goods_order.order_id as order_id,
+      goods_order.api_id as api_id,
+      goods_order.user_id as user_id,
+      goods_order.actual_payment as actual_payment,
+      goods_order.amount as amount,
+      goods_order.status as `status`,
+      goods_order.is_comment as is_comment,
+      goods_order.price as price,
+      goods_order.ctime as ctime,
+      goods_order.utime as utime,
+      goods_order.is_used as is_used
+    from goods_order
+           inner join http_api
+               on
+    http_api.id = goods_order.api_id
+    <if test="userId != null">
+      and goods_order.user_id = #{userId}
+    </if>
+     <if test="apiName != null">
+       and http_api.name like concat('%', #{apiName}, '%')
+     </if>
+      ${ew.customSqlSegment}
+  </select>
+</mapper>
